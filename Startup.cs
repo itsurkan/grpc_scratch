@@ -16,6 +16,7 @@ namespace grpc_scratch
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddGrpc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,10 +31,14 @@ namespace grpc_scratch
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                app.UseEndpoints(endpoints =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                    endpoints.MapGrpcService<CustomerService>();
+                    endpoints.MapGet("/", async context =>
+                    {
+                        await context.Response.WriteAsync("Requires HTTP/2");
+                    });
+                };
             });
         }
     }
