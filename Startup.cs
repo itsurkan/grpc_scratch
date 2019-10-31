@@ -38,7 +38,7 @@ namespace grpc_scratch
                     {
                         await context.Response.WriteAsync("Requires HTTP/2");
                     });
-                };
+                });
             });
         }
     }
