@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\CustomerService.proto" GrpcServices="Client">
+    <Protobuf Include="protorepo\CustomerService.proto" GrpcServices="Client">
       <OutputDir>Grpc\</OutputDir>
       <CompileOutputs>false</CompileOutputs>
     </Protobuf>

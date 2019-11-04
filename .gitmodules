@@ -1,0 +1,6 @@
+[submodule "GrpcServer/Protos/protorepo"]
+	path = GrpcServer/protorepo
+	url = https://github.com/itsurkan/protorepo.git
+[submodule "GrpcClient/protorepo"]
+	path = GrpcClient/protorepo
+	url = https://github.com/itsurkan/protorepo.git
