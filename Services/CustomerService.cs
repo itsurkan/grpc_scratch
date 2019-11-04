@@ -7,13 +7,11 @@ namespace grpc_scratch
 {
     public class CustomerService : CustomerServiceBase
     {
-        public override Task<CustomerResponse> GetCustomerById(CustomerIdRequest request, ServerCallContext context)
-        {
-            return Task.FromResult(new CustomerResponse()
+        public override Task<CustomerResponse> GetCustomerById(CustomerIdRequest request, ServerCallContext context) =>
+            Task.FromResult(new CustomerResponse()
             {
-                FullName = "Hello" + request.CustId,
+                FullName = "Hello " + request.CustId,
                 CustId = request.CustId
             });
-        }
     }
 }
