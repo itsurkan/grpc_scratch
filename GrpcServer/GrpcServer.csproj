@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="Grpc\" />
+    <Folder Include="Protos\" />
   </ItemGroup>
 
 
