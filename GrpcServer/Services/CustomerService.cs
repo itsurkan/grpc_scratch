@@ -13,5 +13,19 @@ namespace grpc_scratch
                 FullName = "Hello " + request.CustId,
                 CustId = request.CustId
             });
+        public override async Task GetCustomerStreamById(CustomerIdRequest request, IServerStreamWriter<CustomerResponse> responseStream, ServerCallContext context)
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                await responseStream.WriteAsync(
+                    new CustomerResponse()
+                    {
+                        FullName = "Hello " + request.CustId,
+                        CustId = request.CustId
+                    }
+                    );
+               await Task.Delay(1000);
+            }
+        }
     }
 }

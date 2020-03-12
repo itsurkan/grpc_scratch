@@ -24,11 +24,11 @@ namespace grpc_scratch
                 {
                     webBuilder.ConfigureKestrel(options =>
                     {
-                        //// This endpoint will use HTTP/2 and HTTPS on port 5001.
-                        //options.Listen(IPAddress.Any, 5001, listenOptions =>
-                        //{
-                        //    listenOptions.Protocols = HttpProtocols.Http2;
-                        //});
+                        // This endpoint will use HTTP/2 and HTTPS on port 5001.
+                        options.Listen(IPAddress.Any, 5001, listenOptions =>
+                        {
+                            listenOptions.Protocols = HttpProtocols.Http2;
+                        });
                     });
                     webBuilder.UseStartup<Startup>();
                 });
